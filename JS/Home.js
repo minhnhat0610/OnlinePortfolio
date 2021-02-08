@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+//Animation for sliders of profile photo
+$('.slider1').css({
+    transform: 'translateX(0%)'
+})
+
+$('.slider2').css({
+    transform: 'translateX(0%)',
+})
+
 // Menu icon Click event for mobile devices
     let menuClose = true;
 
