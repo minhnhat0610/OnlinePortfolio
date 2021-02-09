@@ -15,6 +15,17 @@
     src: url(../Font/Source_Code_Pro/SourceCodePro-Bold.ttf);
     font-weight: bold;
 }
+
+@font-face{
+    font-family: Open-Sans;
+    src: url(../Font/Open_Sans/OpenSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: Open-Sans;
+    src: url(../Font/Open_Sans/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
 /* HMTL and Body setting */
 *{
     box-sizing: border-box;
@@ -152,7 +163,7 @@ nav ul{
             }
 
             .photo{
-                flex-grow: 1.5;
+                flex-basis: 60%;
                 position: relative;
                 overflow-x: hidden;
                 display: flex;
@@ -179,8 +190,49 @@ nav ul{
             }
 
             .biography{
-                flex-grow: 1;
-                border: 1px solid green;
+                flex-basis: 40%;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+
+            .biography article{
+                margin-right: 0.5em;
+                margin-left: 0.5em;
+                font-size: 1.2em;
+                font-family: 'Open-Sans';
+                color: #457B9D;
+                position: relative;
+            }
+
+            .biography article::before{
+                content: "";
+                width: 0.2em;
+                height: 3em;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                margin-top: -2em;
+                background-color: #e63946;
+            }
+
+            .biography article::after{
+                content: "";
+                width: 0.2em;
+                height: 3em;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                margin-bottom: -2em;
+                background-color: #e63946;
+            }
+
+            .emphasized{
+                color: #e63946;
+            }
+
+            .capitalized{
+                font-size: 1.5em;
             }
 
 /* Mobile landscape query */
@@ -190,10 +242,16 @@ nav ul{
     }
 }
 
+/* Tablet query */
+
 @media only screen and (min-width: 700px) and (max-width: 1023px){
     .profilePhotoContainer{
         width: 80%;
         margin:auto;
+    }
+
+    .biography article{
+        font-size: 1.6em;
     }
 }
 
@@ -241,6 +299,11 @@ nav ul{
     .profilePhotoContainer{
         flex-direction: row;
 
+    }
+
+    .biography article{
+        font-size: 2.2em;
+        transform: translateX(-20%);
     }
 }
 
