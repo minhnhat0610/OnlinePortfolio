@@ -9,6 +9,11 @@ $('.slider2').css({
     transform: 'translateX(0%)',
 })
 
+$('.innerContainer').css({
+    transform: 'translateX(0%)',
+    opacity: 1
+})
+
 
 // Menu icon Click event for mobile devices
     let menuClose = true;
