@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+console.log($('.profilePhotoContainer').height());
+console.log($('.photo').height());
+console.log($('.biography').height());
 //Animation for sliders of profile photo
 $('.slider1').css({
     transform: 'translateX(0%)'
