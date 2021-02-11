@@ -1,7 +1,5 @@
 $(document).ready(function(){
-console.log($('.profilePhotoContainer').height());
-console.log($('.photo').height());
-console.log($('.biography').height());
+
 //Animation for sliders of profile photo
 $('.slider1').css({
     transform: 'translateX(0%)'
@@ -14,6 +12,20 @@ $('.slider2').css({
 $('.innerContainer').css({
     transform: 'translateX(0%)',
     opacity: 1
+})
+
+// Animmation for Biography
+$('.biography article').css({
+    opacity: 1,
+})
+$('.decbar1').css({
+    transform: 'translateY(0%)',
+    opacity: 1,
+})
+
+$('.decbar2').css({
+    transform: 'translateY(0%)',
+    opacity: 1,
 })
 
 

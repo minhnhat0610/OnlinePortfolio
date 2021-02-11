@@ -158,7 +158,6 @@ nav ul{
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                border: 1px solid blue;
             }
 
             .photo{
@@ -210,6 +209,8 @@ nav ul{
                 align-items: center;
                 position: relative;
                 z-index: 2;
+                transition: opacity 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 1500ms;
+
             }
 
             .biography article{
@@ -219,11 +220,12 @@ nav ul{
                 font-family: 'Open-Sans';
                 color: #457B9D;
                 position: relative;
+                opacity: 0;
+                transition: opacity 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 1500ms;
 
             }
 
-            .biography article::before{
-                content: "";
+            .decbar1{
                 width: 0.2em;
                 height: 3em;
                 position: absolute;
@@ -231,10 +233,13 @@ nav ul{
                 left: 50%;
                 margin-top: -2em;
                 background-color: #e63946;
+                transform: translateY(-2em);
+                opacity: 0;
+                transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 1500ms;
+
             }
 
-            .biography article::after{
-                content: "";
+            .decbar2{
                 width: 0.2em;
                 height: 3em;
                 position: absolute;
@@ -242,6 +247,10 @@ nav ul{
                 left: 50%;
                 margin-bottom: -2em;
                 background-color: #e63946;
+                transform: translateY(2em);
+                opacity: 0;
+                transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 1500ms;
+
             }
 
             .emphasized{
