@@ -84,10 +84,9 @@ $('.decbar2').css({
 })
 
 //Hover event for Education content
-let contentDivHeight = $('.content').eq(0).height();
-let fontSize = $('body').css('fontSize');
-let backgroundHeight = parseInt(contentDivHeight) + parseInt(fontSize);
 $('.content').on('mouseenter', function(e){
+    let contentDivHeight = $(e.currentTarget).height();
+    let backgroundHeight = parseInt(contentDivHeight) ;
     let background = $(e.currentTarget).find('.background');
     background.css({
         height: backgroundHeight.toString() + 'px',
