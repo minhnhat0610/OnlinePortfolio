@@ -337,6 +337,202 @@ nav ul{
             font-family: Open-Sans;
         }
 
+/* Personal information container */
+.personalContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+/* Decoration bar */
+.decbar3, .decbar4{
+    display: none;
+}
+.aboutMe{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+        /* About Me section */
+        .personalTitle{
+            width: 100%;
+            padding-left: 0.5em;
+        }
+
+        .personalTitle p {
+            font-size: 1.8em;
+            font-family: 'Source code Pro';
+            font-weight: bold;
+            margin: 0.5em 0px ;
+            position: relative;
+        }
+
+        .aboutMe .personalTitle p::after{
+            content: "";
+            position: absolute;
+            width: 2em;
+            height: 0.2em;
+            background-color: #e63946;
+            top: -0.2em;
+            left: 0px;
+        }
+
+        .aboutMeContent{
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        .aboutMeContent p{
+            font-size: 1.2em;
+            font-family: Open-Sans;
+            color: #1d3557;
+        }
+
+.contactMe{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+            /* Contact Me section */
+            .contactMe .personalTitle {
+                padding-left: 0px;
+                padding-right: 0.5em;
+            }
+            .contactMe .personalTitle p{
+                text-align: right;
+            }
+
+            .contactMe .personalTitle p::after{
+                content: "";
+                position: absolute;
+                width: 2em;
+                height: 0.2em;
+                background-color: #e63946;
+                top: -0.2em;
+                right: 0px;
+            }
+
+            .contactMeForm{
+                width: 100%;
+                flex-grow: 1;
+            }
+
+            .contactMeForm form{
+                height: 100%;
+            }
+
+            .contactMeForm ul{
+                height: 100%;
+                margin: 0px;
+                display: flex;
+                flex-direction: column;
+                padding: 0px;
+            }
+
+            .contactMeForm ul fieldset{
+                width: 100%;
+                padding: 0px;
+                border: none;
+            }
+
+            .basicInfor{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .message{
+                flex-grow: 2;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contactMeForm ul li{
+                list-style-type: none;
+                color: #e63946;
+                font-family: Open-Sans;
+                margin: 0.5em 0px;
+                padding: 0px 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .basicInfor li{
+                flex-grow: 1;
+            }
+
+            .contactMeForm ul li i{
+                font-size: 0.7em;
+                flex-basis: 5%;
+            }
+
+            .contactMeForm input, .contactMeForm textarea{
+                height: 100%;
+                flex-basis: 90%;
+                background-color: #f0f9ff;
+                color: #1d3557;
+                font-size: 1.3em;
+                font-family: Open-Sans;
+                border: none;
+                border-radius: 5em;
+                padding-left: 0.5em;
+            }
+
+            .contactMeForm input:focus, .contactMeForm textarea:focus{
+                outline: none;
+            }
+
+            .message li{
+                flex-grow: 3;
+            }
+
+            .message textarea{
+                border-radius: 0.5em;
+            }
+
+            .message button{
+                flex-grow: 1;
+                width: 40%;
+                align-self: center;
+                font-size: 1.5em;
+                font-family: Open-Sans;
+                font-weight: bold;
+                border: none;
+                border-radius: 5em;
+                color: white;
+                background-color: #e63946;
+                cursor: pointer;
+                border: 1px solid #e63946;
+            }
+
+            .message button:hover{
+                background-color: white;
+                color: #e63946;
+            }
+
+            .message button:focus{
+                outline: none;
+                background-color: white;
+                color: #e63946;
+            }
+
+
+
+@media only screen and (max-width: 350px){
+    html,body{
+        font-size: 12px;
+    }
+}
 /* Mobile landscape query */
 @media only screen and (max-height:425px) and (orientation:landscape){
     .navAndProfileContainer{
@@ -348,13 +544,16 @@ nav ul{
 
     .educationContainer{
         height: auto;
-        border: 1px solid blue;
         padding-top: 1em;
         padding-bottom: 1em;
     }
     .content{
         margin-bottom: 1em;
         width: 80%;
+    }
+
+    .personalContainer{
+        height: auto;
     }
 
 }
@@ -373,6 +572,29 @@ nav ul{
 
     .educationContainer{
         width: 80%;
+    }
+
+    .content{
+        flex-basis: 30%;
+        flex-grow: 1;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .personalContainer{
+        width: 75%;
+        justify-content: space-around;
+    }
+
+    .aboutMe{
+        flex-basis: 45%;
+    }
+
+    .aboutMeContent p{
+        font-size: 1.7em;
+    }
+    .contactMe{
+        flex-basis: 45%;
     }
 }
 
@@ -459,6 +681,95 @@ nav ul{
     .detail{
         font-size: 1.3em;
     }
+
+    .personalContainer{
+        margin-top: 5em;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+    }
+
+    .decbar3{
+        display: block;
+        position: absolute;
+        width: 0.4em;
+        height: 10%;
+        left: 49.5%;
+        top: 45%;
+        overflow: hidden;
+    }
+
+    .decbar3 div{
+        height: 100%;
+        width: 100%;
+        background-color: #e63946;
+        animation: movingVertical 10s linear 1s infinite alternate;
+    }
+
+    @keyframes movingVertical {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(100%);}
+    }
+
+    .decbar4{
+        display: block;
+        position: absolute;
+        height: 0.4em;
+        width: 10%;
+        top: 50%;
+        left: 45%;
+        overflow: hidden;
+    }
+
+    .decbar4 div{
+        width: 100%;
+        height: 100%;
+        background-color: #e63946;
+        animation: movingHorizontal 10s linear 0s infinite alternate;
+    }
+
+    @keyframes movingHorizontal {
+        0% {transform: translateX(-100%);}
+        100% {transform: translateX(100%);}
+    }
+
+    .aboutMe{
+        width: 50%;
+    }
+
+    .aboutMe .personalTitle{
+        padding-left: 2em;
+    }
+
+    .personalTitle p{
+        font-size: 2.5em;
+    }
+
+    .aboutMeContent{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .aboutMeContent{
+        font-size: 1.6em;
+    }
+
+    .contactMe{
+        width: 50%;
+        margin-left: 50%;
+    }
+
+    .contactMe .personalTitle{
+        padding-right: 2em;
+    }
+
+    .contactMeForm ul li i{
+        font-size: 1.2em;
+    }
+
+    .contactMeForm input, .contactMeForm textarea{
+        font-size: 1.5em;
+    }
 }
 
 @media only screen and (min-width: 1440px){
@@ -470,5 +781,11 @@ nav ul{
     .educationContainer{
         width: 90%;
     }
+
+    .personalContainer{
+        width: 85%;
+    }
+
+    
 
 }

@@ -11,9 +11,9 @@
         <nav>
             <p class="logo"><span>C</span>Dang</p>
             <ul>
-                <li><a class="navLinks" href="">Education</a></li>
-                <li><a class="navLinks" href="">About Me</a></li>
-                <li><a class="navLinks" href="">Contact Me</a></li>
+                <li><a class="navLinks" href="#education">Education</a></li>
+                <li><a class="navLinks" href="#aboutme">About Me</a></li>
+                <li><a class="navLinks" href="#aboutme">Contact Me</a></li>
                 <li><a class="navLinks" href="">Projects</a></li>
             </ul>
             <i class="fas fa-bars menuIcon" ></i>
@@ -61,7 +61,7 @@
         
     </div>
 
-    <div class="educationContainer">
+    <div class="educationContainer" id="education">
         <div class="content">
             <div class="background"></div>
             <div class="title">
@@ -98,6 +98,60 @@
                 </p>
                 <p>- Git Command, GitHub</p>
                 <p>- MySQL, C#, MS Office</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="personalContainer"> 
+        <div class="aboutMe" id="aboutme">
+            <div class="personalTitle">
+                <p>About Me</p>
+            </div>
+            <div class="aboutMeContent">
+                <p><span class="emphasized">-</span> My name is <span class="emphasized">Cory Dang.</span>  
+                    I am junior college student at Sullivan University </p>
+                
+                <p><span class="emphasized">-</span> I am persuing my <span class="emphasized">Bachelor's</span> degree with strong passion and commitment in IT field.
+                </p>    
+
+                <p><span class="emphasized">-</span> I am seeking an <span class="emphasized">IT internship</span> or  
+                    IT-related position to ultilize my skills and education</p>
+            </div>
+        </div>
+
+        <div class="decbar3">
+            <div></div>
+        </div>
+
+        <div class="decbar4">
+            <div></div>
+        </div>
+
+        <div class="contactMe">
+            <div class="personalTitle">
+                <p>Contact Me</p>
+            </div>
+            <div class="contactMeForm">
+                <form action="index.html" method="POST">
+                    <ul>
+                        <fieldset class="basicInfor">
+                            <li>
+                                <i class="far fa-circle"></i> <input type="text" id="name" name="user_name" placeholder="Name" value="">
+                            </li>
+                            <li>
+                                <i class="far fa-circle"></i> <input type="email" id="email" name="user_email" placeholder="Email">
+                            </li>
+                        </fieldset>
+                        <fieldset class="message">
+                            <li>
+                                <i class="far fa-circle"></i><textarea id="message" placeholder="Leave me a message here"></textarea>
+                            </li>
+                            <button type="button" id="submitButton">Submit</button>
+                        </fieldset>
+                        
+                        
+                    </ul>
+                </form>
             </div>
         </div>
     </div>
