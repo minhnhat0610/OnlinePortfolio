@@ -157,9 +157,41 @@ $('.message textarea').blur(function(){
 // Click event for submit button on form
 
 $('#submitButton').on('click',function(){
-    console.log(CheckNameValidity());
-    console.log(CheckEmailValidity());
-    console.log(CheckMessageValidity());
+    if(CheckEmailValidity()&CheckNameValidity()&CheckMessageValidity()){
+        let name = $('#name').val().toString();
+       $('#senderName').text(name);
+        $('.contactMeForm form').css({
+            transform: 'scale3d(0.5,0.5,0.5)'
+        })
+
+        $('.contactMeForm').css({
+            transform: 'translateX(100%)',
+
+        }) 
+
+        $('#submitButton').css({
+            opacity: 0
+        })
+
+        $('.thanksMessage i').css({
+            opacity: 1
+        })
+
+        $('#thanks').css({
+            transform: 'translateY(0%)',
+            opacity: 1
+        })
+
+        $('#sentConfirm').css({
+            transform: 'translateY(0%)',
+            opacity: 1
+        })
+
+        $('#senderName').css({
+            opacity: 1
+        })
+    }
+
 })
 
 let CheckNameValidity = ()=>{
@@ -217,3 +249,55 @@ let CheckMessageValidity = () =>{
 
     else return true
 }
+
+
+
+// Click to slide Skill set
+const skillLenght = $('.skill').length;
+let i = 0;
+
+//adding Indicator
+let AddingIndicator = () =>{
+    for(let i = 0; i<skillLenght; i++){
+        if(i>0){
+            $('.indicator').append('<i class="far fa-circle"></i> ');
+        }
+        else{
+            $('.indicator').append('<i class="fas fa-circle"></i> ');
+        }
+    }
+}
+
+AddingIndicator();
+$('.fa-angle-right').on('click',function(){
+    if(i<skillLenght-1){
+        i++;
+        let translateDistance = 100*i;
+        $('.skillsSlider').css({
+            transform: 'translateX(-'+translateDistance.toString()+'%)'
+        })
+
+        $('.indicator i').eq(i).addClass('fas');
+        $('.indicator i').eq(i).removeClass('far');
+        $('.indicator i').eq(i-1).removeClass('fas');
+        $('.indicator i').eq(i-1).addClass('far')
+    }
+
+    
+});
+
+$('.fa-angle-left').on('click',function(){
+    if(i>0){
+        i--;
+        $('.indicator i').eq(i).addClass('fas');
+        $('.indicator i').eq(i).removeClass('far');
+        $('.indicator i').eq(i+1).removeClass('fas');
+        $('.indicator i').eq(i+1).addClass('far')
+        let translateDistance = 100*i;
+        $('.skillsSlider').css({
+            transform: 'translateX(-'+translateDistance.toString()+'%)'
+        })
+        
+    }
+
+})

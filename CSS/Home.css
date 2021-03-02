@@ -401,6 +401,7 @@ nav ul{
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
 }
             /* Contact Me section */
             .contactMe .personalTitle {
@@ -424,10 +425,13 @@ nav ul{
             .contactMeForm{
                 width: 100%;
                 flex-grow: 1;
+                position: relative;
+                transition: transform 1000ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 1000ms;
             }
 
             .contactMeForm form{
                 height: 100%;
+                transition: transform 1000ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
             }
 
             .contactMeForm ul{
@@ -526,6 +530,176 @@ nav ul{
                 color: #e63946;
             }
 
+            /* Thank you message */
+            .thanksMessage{
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 0px;
+                left: -100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 500ms ease-in-out 1500ms;
+            }
+
+            .thanksMessage i{
+                color: #339af0;
+                font-size: 3em;
+                opacity: 0;
+                transition: 500ms ease-in-out 2000ms;
+            }
+
+            .thanksMessage p{
+                font-size: 1.2em;
+                font-family: Open-Sans;
+                color: #1d3557;
+                text-align: center;
+                opacity: 0;
+                transition: 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 2000ms;
+            }
+
+            #thanks{
+                transform: translateY(-1em);
+            }
+
+            #sentConfirm{
+                transform: translateY(1em);
+            }
+
+            #senderName{
+                color: #e63946;
+                font-size: 2em;
+                font-weight: bold;
+            }
+
+/* Divider */
+.divider{
+    height: 0.3em;
+    width: 60%;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e63946;
+}
+
+/* Skills Set */
+.skillSetContainer{
+    width: 100%;
+    height: 60vh;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.skillsetTitle{
+    width: 100%;
+    height: 10%;
+
+}
+
+.skillsetTitle p {
+    font-size: 1.8em;
+    font-family: 'Source Code Pro';
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+}
+
+.skillsetContent{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.skillsetContent > i{
+    position: absolute;
+    font-size: 2.5em;
+    top: 30%;
+    z-index: 5;
+}
+
+.fa-angle-left{
+    color: #457B9D;
+    left: 0.5em;
+    cursor: pointer;
+}
+
+.fa-angle-right{
+    color: #e63946;
+    right: 0.5em;
+    cursor: pointer;
+}
+
+.skillsSlider{
+    flex-basis: 80%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+.skill{
+    height: 100%;
+    min-width: 100%;
+    background-color: #f1faee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill2{
+    background-color: white;
+}
+
+.indicator{
+    flex-basis: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator > i{
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+    font-size: 0.8em;
+    color: #457b9d
+}
+
+
+        /* Skill content */
+        .skill img{
+            width: 4em;
+
+        }
+
+        .skill p{
+            color: #1d3557;
+            padding-left: 1em;
+            padding-right: 1em;
+            text-align: center;
+            margin: 0.5em 0px; 
+        }
+
+        .skillName{
+            font-size: 2em;
+            font-weight: bold;
+            font-family: 'Source Code Pro';
+
+        }
+
+        .skillDetail{
+            font-size: 1.2em;
+            font-family: Open-Sans;
+        }
 
 
 @media only screen and (max-width: 350px){
@@ -554,6 +728,14 @@ nav ul{
 
     .personalContainer{
         height: auto;
+    }
+
+    .thanksMessage i{
+        font-size: 2em;
+    }
+
+    .thanksMessage p{
+        margin: 2%;
     }
 
 }
@@ -596,6 +778,58 @@ nav ul{
     .contactMe{
         flex-basis: 45%;
     }
+
+    .thanksMessage i{
+        font-size: 4em;
+    }
+
+    .thanksMessage p{
+        font-size: 1.7em;
+    }
+
+    .divider{
+        width: 50%;
+    }
+
+    .skillSetContainer{
+        height: auto;
+    }
+
+    .skillsetContent i{
+        display: none;
+    }
+
+    .skillsetTitle{
+        padding-bottom: 1em;
+    }
+
+    .skillsSlider{
+        flex-wrap: wrap;
+    }
+
+    .skill{
+        height: auto;
+        flex-basis: 50%;
+        min-width: auto;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .skillName{
+        font-size: 1.8em;
+    }
+
+    .skillDetail{
+        font-size: 1.2em;
+    }
+    
+    .skill:nth-of-type(1){ order: 1}
+    .skill:nth-of-type(2){ order: 2}
+    .skill:nth-of-type(3){ order: 4}
+    .skill:nth-of-type(4){ order: 3}
+    .skill:nth-of-type(5){ order: 5}
+    .skill:nth-of-type(6){ order: 6}
+ 
 }
 
 /* Normal laptop query */
@@ -750,8 +984,8 @@ nav ul{
         padding-right: 2em;
     }
 
-    .aboutMeContent{
-        font-size: 1.6em;
+    .aboutMeContent p{
+        font-size: 1.8em;
     }
 
     .contactMe{
@@ -770,6 +1004,57 @@ nav ul{
     .contactMeForm input, .contactMeForm textarea{
         font-size: 1.5em;
     }
+
+    .thanksMessage i{
+        font-size: 4em;
+    }
+
+    .thanksMessage p{
+        font-size: 1.8em;
+    }
+
+    .thanksMessage #senderName{
+        font-size: 2.5em;
+    }
+
+    .divider{
+        margin-top: 10em;
+        width: 40%;
+    }
+
+    .skillSetContainer{
+        height: auto;
+    }
+
+    .skillsetTitle{
+        padding-bottom: 1em;
+    }
+
+    .skillsetTitle p {
+        font-size: 2.5em;
+    }
+
+    .skillsetContent i{
+        display: none;
+    } 
+
+    .skillsSlider{
+        width: 85%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .skill{
+        height: auto;
+        flex-basis: 30%;
+        min-width: auto;
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+
+
 }
 
 @media only screen and (min-width: 1440px){
@@ -786,6 +1071,12 @@ nav ul{
         width: 85%;
     }
 
-    
+    .divider{
+        width: 30%;
+    }
+
+    .skillSetContainer{
+        width: 85%;
+    }
 
 }
