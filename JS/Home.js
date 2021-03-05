@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 //Animation for sliders of profile photo
 $('.slider1').css({
     transform: 'translateX(0%)'
@@ -268,8 +267,7 @@ let AddingIndicator = () =>{
     }
 }
 
-AddingIndicator();
-$('.fa-angle-right').on('click',function(){
+const slideRight = ()=>{
     if(i<skillLenght-1){
         i++;
         let translateDistance = 100*i;
@@ -282,11 +280,9 @@ $('.fa-angle-right').on('click',function(){
         $('.indicator i').eq(i-1).removeClass('fas');
         $('.indicator i').eq(i-1).addClass('far')
     }
+}
 
-    
-});
-
-$('.fa-angle-left').on('click',function(){
+const slideLeft = () =>{
     if(i>0){
         i--;
         $('.indicator i').eq(i).addClass('fas');
@@ -299,5 +295,121 @@ $('.fa-angle-left').on('click',function(){
         })
         
     }
+}
 
+AddingIndicator();
+$('.fa-angle-right').on('click',function(){
+    slideRight();
+});
+
+$('.fa-angle-left').on('click',function(){
+   slideLeft();
+})
+
+$('.skillsetContent').on('swipeleft',function(){
+    slideRight();
+})
+
+$('.skillsetContent').on('swiperight',function(){
+    slideLeft();
+})
+
+// Hover skill to change background color
+let currentBackColor;
+$('.skill').on('mouseenter',function(){
+    $(this).find('.anima1').css({
+        transform: 'translateX(-80%)',
+        opacity: 1,
+    })
+
+    $(this).find('.anima2').css({
+    transform: 'translateY(80%)',
+    opacity: 1,
+
+    })
+
+    $(this).find('.anima3').css({
+        transform: 'translateX(80%)',
+        opacity: 1,
+
+    })
+
+    $(this).find('.anima4').css({
+        transform: 'translateY(-80%)',
+        opacity: 1,
+
+    })
+
+    $(this).find('.anima5').css({
+        transform: 'translateX(80%)',
+        opacity: 1,
+    })
+
+    $(this).find('.anima6').css({
+    transform: 'translateY(-80%)',
+    opacity: 1,
+
+    })
+
+    $(this).find('.anima7').css({
+        transform: 'translateX(-80%)',
+        opacity: 1,
+
+    })
+
+    $(this).find('.anima8').css({
+        transform: 'translateY(80%)',
+        opacity: 1,
+
+    })
+})
+
+$('.skill').on('mouseleave',function(){
+    $(this).find('.anima1').css({
+        transform: 'translateX(-100%)',
+        opacity: 0,
+
+    })
+  
+    $(this).find('.anima2').css({
+      transform: 'translateY(100%)',
+      opacity: 0,
+
+  })
+  
+  $(this).find('.anima3').css({
+      transform: 'translateX(100%)',
+      opacity: 0,
+
+  })
+  
+  $(this).find('.anima4').css({
+      transform: 'translateY(-100%)',
+      opacity: 0,
+
+  })
+
+  $(this).find('.anima5').css({
+        transform: 'translateX(100%)',
+        opacity: 0,
+    })
+
+    $(this).find('.anima6').css({
+    transform: 'translateY(-100%)',
+    opacity: 0,
+
+    })
+
+    $(this).find('.anima7').css({
+        transform: 'translateX(-100%)',
+        opacity: 0,
+
+    })
+
+    $(this).find('.anima8').css({
+        transform: 'translateY(100%)',
+        opacity: 0,
+
+    })
+        
 })
