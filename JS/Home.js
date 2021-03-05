@@ -306,13 +306,27 @@ $('.fa-angle-left').on('click',function(){
    slideLeft();
 })
 
-$('.skillsetContent').on('swipeleft',function(){
-    slideRight();
+//touch event for slide
+let xStart = null;
+let xEnd = null;
+$('.skillsetContent').on('touchstart',function(e){
+    xStart = e.touches[0].clientX;
+});
+
+$('.skillsetContent').on('touchmove',function(e){
+    xEnd = e.touches[0].clientX;
 })
 
-$('.skillsetContent').on('swiperight',function(){
-    slideLeft();
+$('.skillsetContent').on('touchend',function(){
+    //swipe right
+    if(xStart > xEnd){
+        slideRight();
+    }
+    else{
+        slideLeft();
+    }
 })
+
 
 // Hover skill to change background color
 let currentBackColor;
