@@ -254,6 +254,7 @@ let CheckMessageValidity = () =>{
 // Click to slide Skill set
 const skillLenght = $('.skill').length;
 let i = 0;
+let isClicked = false;
 
 //adding Indicator
 let AddingIndicator = () =>{
@@ -308,21 +309,27 @@ $('.fa-angle-left').on('click',function(){
 
 //touch event for slide
 let xStart = null;
+let yStart = null
 let xEnd = null;
-$('.skillsetContent').on('touchstart',function(e){
+let yEnd = null;
+$('.sliderContainer').on('touchstart',function(e){
     xStart = e.touches[0].clientX;
+    yStart = e.touches[0].clientY;
+    console.log(yStart);
 });
 
-$('.skillsetContent').on('touchmove',function(e){
+$('.sliderContainer').on('touchmove',function(e){
     xEnd = e.touches[0].clientX;
+    yEnd = e.touches[0].clientY;
+    console.log(yEnd);
 })
 
-$('.skillsetContent').on('touchend',function(){
+$('.sliderContainer').on('touchend',function(){
     //swipe right
-    if(xStart > xEnd){
+    if((xStart > xEnd) && (Math.abs(yEnd-yStart)) < 50){
         slideRight();
     }
-    else{
+    else if((xStart < xEnd) && (Math.abs(yEnd-yStart)) < 50){
         slideLeft();
     }
 })

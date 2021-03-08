@@ -615,6 +615,7 @@ nav ul{
     align-items: center;
     flex-direction: column;
     position: relative;
+    z-index: 2;
 }
 
 .skillsetContent > i{
@@ -634,6 +635,12 @@ nav ul{
     color: #e63946;
     right: 0.5em;
     cursor: pointer;
+}
+
+.sliderContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
 }
 
 .skillsSlider{
