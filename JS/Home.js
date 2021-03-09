@@ -434,3 +434,43 @@ $('.skill').on('mouseleave',function(){
     })
         
 })
+
+
+// Hover Project image
+$('.project').on('mouseenter', function(){
+    $(this).find('.imageContainer').css({
+        height: '20em',
+    })
+
+    $(this).find('.imageContainer').eq(1).css({
+        transform: 'rotate(-3deg) translateX(-20%)',
+    })
+
+    $(this).find('.imageContainer').eq(2).css({
+        transform: 'rotate(3deg) translateX(20%)',
+    })
+
+    $(this).find('.projectName').css({
+        opacity: 1
+    })
+
+})
+
+$('.project').on('mouseleave', function(){
+    $(this).find('.imageContainer').css({
+        height: '15em',
+    })
+
+    $(this).find('.imageContainer').eq(1).css({
+        transform: 'rotate(0deg) translateX(-20%)',
+    })
+
+    $(this).find('.imageContainer').eq(2).css({
+        transform: 'rotate(0deg) translateX(20%)',
+    })
+
+    $(this).find('.projectName').css({
+        opacity: 0
+    })
+
+})
