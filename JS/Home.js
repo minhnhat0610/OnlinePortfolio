@@ -29,57 +29,82 @@ $('.decbar2').css({
 
 
 // Menu icon Click event for mobile devices
-    let menuClose = true;
+let menuClose = true;
+
+const closeMobileNav = () => {
+    $('.mobileNavPanel').css({
+        transform: 'translateX(100%)',
+    })
+
+    $('.menuIcon').removeClass('fa-times');
+    $('.menuIcon').addClass('fa-bars');
+    menuClose = true;
+    // Hide the links
+    $('.mobileNavPanel .navLinks').each(function(){
+        $(this).css({
+            opacity: 0,
+            transform: 'translateX(5em)',
+            transition: 'all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 500ms',
+        });
+
+    })
+}
+
+const showMobileNav = ()=>{
+    $('.mobileNavPanel').css({
+        transform: 'translateX(0%)',
+    })
+
+    $('.menuIcon').removeClass('fa-bars');
+    $('.menuIcon').addClass('fa-times');
+    menuClose = false;
+
+    // Reveal the links
+    let delayTime = 0
+    $('.mobileNavPanel .navLinks').each(function(){
+        $(this).css({
+            opacity: 1,
+            transform: 'translateX(0em)',
+            transition: 'all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000)',
+            transitionDelay: delayTime.toString() + 'ms'
+        });
+
+        delayTime += 100;
+    })
+}
 
     //Reveal the mobile navigation panel
     $('.menuIcon').on('click',function(){
         if(menuClose){
-            $('.mobileNavPanel').css({
-                transform: 'translateX(0%)',
-            })
-    
-            $('.menuIcon').removeClass('fa-bars');
-            $('.menuIcon').addClass('fa-times');
-            menuClose = false;
-
-            // Reveal the links
-            let delayTime = 0
-            $('.mobileNavPanel .navLinks').each(function(){
-                $(this).css({
-                    opacity: 1,
-                    transform: 'translateX(0em)',
-                    transition: 'all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000)',
-                    transitionDelay: delayTime.toString() + 'ms'
-                });
-
-                delayTime += 100;
-            })
+            showMobileNav();
         }
 
         else{
-            $('.mobileNavPanel').css({
-                transform: 'translateX(100%)',
-            })
-    
-            $('.menuIcon').removeClass('fa-times');
-            $('.menuIcon').addClass('fa-bars');
-            menuClose = true;
-            // Hide the links
-            $('.mobileNavPanel .navLinks').each(function(){
-                $(this).css({
-                    opacity: 0,
-                    transform: 'translateX(5em)',
-                    transition: 'all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000) 500ms',
-                });
-
-            })
+           closeMobileNav();
         }
 
         
         
     })
 
-    
+
+    //Click event for navigation
+$('.navLinks').on('click',function(){
+    let position = $($(this).attr('href')).offset().top;
+    if(menuClose){
+        $('body, html').animate({
+            scrollTop: position
+        }, 500, 'swing');
+    }
+
+    else{
+       closeMobileNav();
+
+        $('body, html').animate({
+            scrollTop: position
+        }, {duration: 500, easing: 'swing'});
+    }
+  
 })
 
 //Hover event for Education content
@@ -269,7 +294,7 @@ let AddingIndicator = () =>{
 }
 
 const slideRight = ()=>{
-    if(i<skillLenght-1){
+    if(i<skillLenght-1 && $('body').width()<=425){
         i++;
         let translateDistance = 100*i;
         $('.skillsSlider').css({
@@ -284,7 +309,7 @@ const slideRight = ()=>{
 }
 
 const slideLeft = () =>{
-    if(i>0){
+    if(i>0 && $('body').width()<=425){
         i--;
         $('.indicator i').eq(i).addClass('fas');
         $('.indicator i').eq(i).removeClass('far');
@@ -438,39 +463,49 @@ $('.skill').on('mouseleave',function(){
 
 // Hover Project image
 $('.project').on('mouseenter', function(){
-    $(this).find('.imageContainer').css({
-        height: '20em',
-    })
-
-    $(this).find('.imageContainer').eq(1).css({
-        transform: 'rotate(-3deg) translateX(-20%)',
-    })
-
-    $(this).find('.imageContainer').eq(2).css({
-        transform: 'rotate(3deg) translateX(20%)',
-    })
-
-    $(this).find('.projectName').css({
-        opacity: 1
-    })
+    if($('body').width()>= 1025){
+        $(this).find('.imageContainer').css({
+            height: '20em',
+        })
+    
+        $(this).find('.imageContainer').eq(1).css({
+            transform: 'rotate(-3deg) translateX(-20%)',
+        })
+    
+        $(this).find('.imageContainer').eq(2).css({
+            transform: 'rotate(3deg) translateX(20%)',
+        })
+    
+        $(this).find('.projectName').css({
+            opacity: 1
+        })
+    }
+   
 
 })
 
 $('.project').on('mouseleave', function(){
-    $(this).find('.imageContainer').css({
-        height: '15em',
-    })
-
-    $(this).find('.imageContainer').eq(1).css({
-        transform: 'rotate(0deg) translateX(-20%)',
-    })
-
-    $(this).find('.imageContainer').eq(2).css({
-        transform: 'rotate(0deg) translateX(20%)',
-    })
-
-    $(this).find('.projectName').css({
-        opacity: 0
-    })
-
+    if($('body').width()>= 1025){
+        $(this).find('.imageContainer').css({
+            height: '15em',
+        })
+    
+        $(this).find('.imageContainer').eq(1).css({
+            transform: 'rotate(0deg) translateX(-20%)',
+        })
+    
+        $(this).find('.imageContainer').eq(2).css({
+            transform: 'rotate(0deg) translateX(20%)',
+        })
+    
+        $(this).find('.projectName').css({
+            opacity: 0
+        })
+    
+    }
+   
 })
+    
+})
+
+
