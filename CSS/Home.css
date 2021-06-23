@@ -338,6 +338,14 @@ nav ul{
             font-family: Open-Sans;
         }
 
+        .detail i {
+            font-size: 1.6em;
+        }
+        .detail a {
+            color: white;
+            text-decoration: none;
+        }
+
 /* Personal information container */
 .personalContainer{
     height: 100vh;
@@ -669,6 +677,7 @@ nav ul{
      background-color: white;
 }
 
+
 .skill .animation{
     display: none;
 }
@@ -815,6 +824,11 @@ nav ul{
         padding-right: 1em;
     }
 
+    .projectName a{
+        color: white;
+        text-decoration: none;
+    }
+
 
 @media only screen and (max-width: 350px){
     html,body{
@@ -929,6 +943,10 @@ nav ul{
         padding-bottom: 1em;
     }
 
+    .skill:last-of-type{
+        background-color: white;
+    }
+
     .skillName{
         font-size: 1.8em;
     }
@@ -943,7 +961,7 @@ nav ul{
     .skill:nth-of-type(4){ order: 3}
     .skill:nth-of-type(5){ order: 5}
     .skill:nth-of-type(6){ order: 6}
- 
+    .skill:nth-of-type(7){ order: 7}
     .projectTitle{
         padding-bottom: 1em;
     }
@@ -1023,7 +1041,7 @@ nav ul{
     }
 
     .content{
-        min-height: 90%;
+        min-height: 80%;
     }
 
     .title{
@@ -1171,6 +1189,10 @@ nav ul{
         padding-bottom: 4em;
         position: relative;
         overflow: hidden;
+    }
+
+    .skill:last-of-type{
+        background-color: white;
     }
 
     .skill .animation{

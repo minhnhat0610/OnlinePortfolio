@@ -294,7 +294,7 @@ let AddingIndicator = () =>{
 }
 
 const slideRight = ()=>{
-    if(i<skillLenght-1 && $('body').width()<=425){
+    if(i<skillLenght-1 && $('body').width()<=700){
         i++;
         let translateDistance = 100*i;
         $('.skillsSlider').css({
@@ -309,7 +309,7 @@ const slideRight = ()=>{
 }
 
 const slideLeft = () =>{
-    if(i>0 && $('body').width()<=425){
+    if(i>0 && $('body').width()<=700){
         i--;
         $('.indicator i').eq(i).addClass('fas');
         $('.indicator i').eq(i).removeClass('far');
